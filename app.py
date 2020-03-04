@@ -6,6 +6,7 @@ from dash.dependencies import Input, Output, State
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as do
+import os
 
 app = dash.Dash(__name__)
 app.title='Monthly Hours of Sunlight'
@@ -13,8 +14,8 @@ server = app.server
 
 data = pd.read_csv('sunshine_latlon.csv')
 
-map_token = 'pk.eyJ1IjoibmVpbHRoZWdyZWF0ZXN0IiwiYSI6ImNrM2ZqMmhvNjAzN2QzbW5uaHQyamo5NGkifQ.l53kgbZcDGY8U8xHkSWv0w'
-map_style = 'mapbox://styles/neilthegreatest/ck7bg78ms00he1iqmu14kb00v'
+map_token = os.environ.get('MAPBOX_TOKEN')
+map_style = os.environ.get('MAPBOX_STYLE')
 
 content = dbc.Container([
 	dbc.Row([
