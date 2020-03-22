@@ -85,7 +85,7 @@ content = dbc.Container([
 			dbc.Row([
 				dcc.Graph(id="bar-chart", config={'displayModeBar': False}, responsive=True, style={'width':'100%'})
 			],style={'height':'35%'})
-		],style={'backgroundColor':'#D4E8D5'}, md=8)
+		],style={'backgroundColor':'#D4E8D5','height':'100%'}, md=8)
 	],className='h-100')
 ],fluid=True, style={"height": "100vh"})
 
