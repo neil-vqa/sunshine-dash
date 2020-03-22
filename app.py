@@ -8,7 +8,7 @@ import numpy as np
 import plotly.graph_objects as do
 import os
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__,meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}])
 app.title='Monthly Hours of Sunlight'
 server = app.server
 
@@ -263,4 +263,4 @@ def update_charts(n_clicks, city_select):
 		return plot1,plot2
 		
 if __name__=='__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
